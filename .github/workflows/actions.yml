@@ -18,6 +18,7 @@ env:
 
 jobs: 
   Login:
+    name: Login to Azure
     runs-on: ubuntu-latest
     steps:
     - name: Azure CLI Login
@@ -37,6 +38,7 @@ jobs:
 
   terraform-plan:
     name: 'Terraform Plan'
+    needs: Login
     runs-on: ubuntu-latest
     env:
       #this is needed since we are running terraform with read-only permissions
