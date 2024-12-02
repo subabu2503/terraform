@@ -36,11 +36,6 @@ jobs:
           az account show
           # You can write your Azure CLI inline scripts here.
 
-    - name: 'Terraform Plan'
-      env:
-        #this is needed since we are running terraform with read-only permissions
-        ARM_SKIP_PROVIDER_REGISTRATION: true
-
     # Checkout the repository to the GitHub Actions runner
     - name: Checkout
       uses: actions/checkout@v3
